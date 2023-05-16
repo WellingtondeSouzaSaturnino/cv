@@ -15,11 +15,42 @@
 
     <style>
       html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+      .button{
+            margin-right: 20px;
+            float: right;
+            position: relative;
+            width: 100px;
+            height: 40px;
+            border-radius: 25px;
+            box-shadow: 0 0 2.5px 0 #39a2db59;
+            cursor: pointer;
+            background-color: PaleGreen;
+        }
+        .ball{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #00CED1;
+            transition: left 1s;
+        }
+        .ball-move{
+            left:calc(100% - 40px);
+        }
+        .dark{
+            background-color: black ;
+        }
     </style>
     
   </head>
 
-  <body class="w3-light-grey" cz-shortcut-listen="true">
+  <body>
+
+    <div class="button">
+      <div class="ball"></div>
+   </div>
   
     <!-- Page Container -->
     <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -174,6 +205,13 @@
       <a href="https://www.linkedin.com/in/wellington-de-souza/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>    
       <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </footer>
+
+    <script>
+      document.querySelector('.ball').addEventListener('click', (e) => {
+       e.target.classList.toggle('ball-move');
+       document.body.classList.toggle('dark');
+      }); 
+       </script> 
   
   </body>
 
